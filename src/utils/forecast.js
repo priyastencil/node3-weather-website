@@ -11,11 +11,13 @@ const forecast = (address, callback) => {
            } else {
                //const longitude = response.body.features[0].center[0]
                //const latitude = response.body.features[0].center[1]
-               callback(undefined, {
-                   teamperature: body.current.temperature, 
-                   feelslike:  body.current.feelslike,
-                   description:  body.current.weather_descriptions
-               })            
+            //    callback(undefined, {
+            //        teamperature: body.current.temperature, 
+            //        feelslike:  body.current.feelslike,
+            //        description:  body.current.weather_descriptions
+            //    })   
+               callback(undefined, body.current.weather_descriptions + ' It is currently ' + body.current.temperature + ' but feels like ' + body.current.feelslike + ' the humidity is ' + body.current.humidity + '%'
+            )                        
            }
        })
    }
